@@ -1,17 +1,14 @@
-// What is mistake in this code:
-
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm'
-import About from "./components/About";
+// import About from "./components/About";
 import React,{ useState } from 'react';
 import Alert from './components/Alert';
-import {
-  // BrowserRouter as Router,
-  Route,
-  // Link,
-  Routes,
-} from "react-router-dom";
+// import {
+//   // BrowserRouter as Router,
+//   Route,
+//   Routes
+// } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');//whether dark mode is enabled or not
@@ -48,13 +45,14 @@ function App() {
     <Navbar title="Trimurti" aboutText="About" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container">
+      <TextForm showAlert={showAlert} heading="Enter the text to analyze" headingOutput="Output :" mode={mode} />
       {/* <Router>  */}
-        <Routes>
+        {/* <Routes>
           <Route exact path="/about" Component={About} />        
           <Route 
             exact path='/'
             element={<TextForm showAlert={showAlert} heading="Enter the text to analyze" headingOutput="Output :" mode={mode} />}
-          />
+          /> */}
           {/* <Route
             path="/home"
             Component={(props) => (
@@ -65,7 +63,7 @@ function App() {
             path="/home3" 
             render={(props) => <TextForm {...props} showAlert={`showAlert`} heading="Enter the text to analyze" headingOutput="Output :" mode={mode} />} 
           /> */}
-        </Routes>
+        {/* </Routes> */}
       {/* </Router> */}
     </div>
     </>
